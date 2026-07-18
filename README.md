@@ -99,6 +99,17 @@ com.etzhayyim.tsutae.{
 }
 ```
 
+## Migration Boundary
+
+`kotoba-lang/kotodama-cells/tsutae_*` is legacy source
+during migration. The local `cells/tsutae_*/state_machine.cljc` files preserve
+the per-cell state machines, and the murakumo-facing orchestration boundary
+belongs in `src/tsutae/murakumo.cljc` as pure `.cljc` actor plans. The plans
+preserve R0 scaffold behavior by emitting no write effects until Council,
+silen-tsutae, PCB, RF, OS firmware, repair-rightful, privacy, firmware, and
+recycling attestations are supplied. Host placement remains in
+`kotoba-lang/murakumo`; AT Protocol/PDS surfaces remain in `gftdcojp/app-aozora`.
+
 ## Cross-Actor Wire
 
 | Direction | Counter-actor | Supply / role | Wire (R-phase) |
