@@ -1,11 +1,11 @@
-(ns tsutae.py.test-agent
+(ns tsutae.methods.test-agent
   "Tests for the tsutae manufacturing agent (ADR-2605261300 port; supersedes py/test_agent.py).
   Covers all handlers: device-order (success / SBT-inactive / proprietary-SoC refusal), is-open-soc,
   production-progress (no-cid / with-cid / unknown-stage), quality (pass/fail/rework state
   transitions), device-attestation quorum, and the settlement tithe split (intent vs executed)."
   (:require [clojure.test :refer [deftest is]]
             [clojure.string :as str]
-            [tsutae.py.agent :as a]))
+            [tsutae.methods.agent :as a]))
 
 (deftest test-device-order-success
   (let [r (a/handle-device-order {"buyer_did" "did:web:m" "specs" "open handheld" "soc" "StarFive-JH7110"

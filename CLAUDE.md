@@ -1,4 +1,4 @@
-# 20-actors/tsutae — CLAUDE.md
+# tsutae standalone actor — CLAUDE.md
 
 ## Identity
 
@@ -104,7 +104,7 @@ See `ADR-2605261300` for full definitions. Key enforcement:
 
 **Deployment**:
 ```bash
-cd 20-actors/tsutae
+cd orgs/etzhayyim/com-etzhayyim-tsutae
 e7m actor deploy .
 ```
 
@@ -117,7 +117,7 @@ e7m actor deploy .
 ```bash
 cd /tmp
 for cell in tsutae_pcb_smt tsutae_chassis_assembly tsutae_display_attachment tsutae_firmware_load tsutae_final_qc tsutae_packaging tsutae_device_attestation tsutae_recycling_intake; do
-  PYTHONPATH=/path/to/etzhayyim-rootkotoba-lang/kotodama-cells python3 -c "import ${cell}.cell" 2>&1 | tail -1
+  PYTHONPATH=/path/to/etzhayyim-root/40-engine/kotoba/crates/kotoba-kotodama/cells python3 -c "import ${cell}.cell" 2>&1 | tail -1
 done
 ```
 
@@ -138,10 +138,10 @@ R0 = declaration only. Actual lexicon record flow activates at consumer's R-phas
 
 ## Related Files
 
-- `/20-actors/tsutae/manifest.jsonld` — DID + cell registry + constitutional gates
+- `manifest.edn` — canonical actor registry + constitutional gates
 - `/90-docs/adr/2605261300-tsutae-handheld-communication-tier-b-actor-r0.md` — Full R0 master ADR
 - `/20-actors/silicon/README.md` — Sibling (iwakura SoC R2+ upstream)
-- `/20-actors/igata/README.md` — Sibling (HPDC Al chassis R3 upstream)
+- `/orgs/etzhayyim/com-etzhayyim-igata/README.md` — Sibling (HPDC Al chassis R3 upstream)
 - `/20-actors/kanayama/README.md` — Sibling (EOL Al recovery downstream)
 - `/20-actors/makura/README.md` — Sibling (§2(c) consumer good translation precedent)
 - `/CLAUDE.md` — Status table row 55

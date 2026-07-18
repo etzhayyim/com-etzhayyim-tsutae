@@ -9,7 +9,7 @@ hardware + firmware + SoC; closes the EoL loop with kanayama.
 | Lexicons | ✅ 6 under `com.etzhayyim.tsutae.*` (chassis/pcb/firmware/device/recyclingCertificate/silenTsutaeReview) — rich gate-hook ledger |
 | Cells | 🟡 path-reserved (R0) |
 | Manifest | ✅ `manifest.jsonld` — `constitutionalGates` (G1–G14) machine-readable |
-| Tests | ✅ `methods/test_charter_gates.cljc` — **8 tests, green** (added 2026-06-17); `./run_tests.sh` |
+| Tests | ✅ standalone Clojure suites under `test/tsutae`; run with `bb test` |
 | Methods | 🟡 offline engine = R1 |
 
 ## Charter gates pinned by the new charter-gate test
@@ -34,4 +34,5 @@ hardware + firmware + SoC; closes the EoL loop with kanayama.
 
 silenTsutaeReview `r1-benchtop-poc` + `r1-starfive-jh7110-bsp-open-source` + Council Lv6+.
 
-> **2026-06-17 substrate-native migration (ADR-2606160842):** the charter-gate test above was ported Python→Clojure (`methods/test_charter_gates.py` → `methods/test_charter_gates.cljc`, ns `tsutae.methods.test-charter-gates`, reads the lexicons via cheshire/edn) and the Python was pruned. Run via `./run_tests.sh` (now `exec bb`) or `bb run test:charter` (all 34 charter suites; 244 tests / 924 assertions green). Assertions unchanged (1:1 port).
+> **Standalone migration:** runtime code is under `src/tsutae`, tests under
+> `test/tsutae`, and canonical contracts/data are EDN. Run with `bb test`.

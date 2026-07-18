@@ -1,5 +1,10 @@
 # tsutae (伝え) — Handheld Communication Device Tier-B Actor
 
+Canonical metadata, contracts, and seed data are EDN. Runtime code lives under
+`src/tsutae`, tests under `test/tsutae`, schemas under `schema/`, and
+external wire projections—when needed—belong only under `wire/`.
+Run the standalone suite with `bb test`.
+
 **DID**: `did:web:etzhayyim.com:tsutae`
 **Namespace**: `com.etzhayyim.tsutae.*`
 **ADR**: ADR-2605261300 (R0 master), ADR-2605261315 (R1, reserved), ADR-2605261330 (R2, reserved), ADR-2605261345 (R3, reserved)
@@ -122,7 +127,7 @@ com.etzhayyim.tsutae.{
 
 - `/90-docs/adr/2605261300-tsutae-handheld-communication-tier-b-actor-r0.md` — Full ADR
 - `/20-actors/silicon/README.md` — Sibling (iwakura SoC R2+ upstream supplier)
-- `/20-actors/igata/README.md` — Sibling (HPDC Al chassis R3 upstream supplier)
+- `/orgs/etzhayyim/com-etzhayyim-igata/README.md` — Sibling (HPDC Al chassis R3 upstream supplier)
 - `/20-actors/kanayama/README.md` — Sibling (EOL Al recovery downstream consumer)
 - `/20-actors/watatsumi/README.md` — Sibling (YouTube methodology + structural exclusion pattern)
 - `/20-actors/makura/README.md` — Sibling (§2(c) consumer good translation precedent — no-electronics → with-electronics)
